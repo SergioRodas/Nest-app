@@ -1,16 +1,16 @@
 import { Controller, Get } from "@nestjs/common";
 
-@Controller({})
+@Controller('tasks')
 export class TaskController {
 
-    @Get('/tasks')
+    @Get('/all')
     getAllTasks() {
         return "All tasks";
     }
 
     @Get('/')
     index() {
-        return "Hello world";
+        return "Task section";
     }
 
 }
