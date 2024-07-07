@@ -1,16 +1,17 @@
-import { Controller, Get } from "@nestjs/common";
+import { Controller, Get } from '@nestjs/common';
+import { TasksService } from './task.service';
 
 @Controller('tasks')
 export class TaskController {
+    constructor(private tasksService: TasksService) {}
 
     @Get('/all')
     getAllTasks() {
-        return "All tasks";
+        return this.tasksService.getTasks();
     }
 
     @Get('/')
     index() {
-        return "Task section";
+        return 'Task section';
     }
-
 }
